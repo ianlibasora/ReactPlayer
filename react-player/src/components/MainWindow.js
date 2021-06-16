@@ -48,6 +48,8 @@ const useStyles = makeStyles((theme) => ({
 		width: drawerWidth,
 		flexShrink: 0,
 		whiteSpace: 'nowrap',
+		backgroundColor: "#353535",
+		borderColor: "transparent"
 	},
 	drawerOpen: {
 		width: drawerWidth,
@@ -55,6 +57,8 @@ const useStyles = makeStyles((theme) => ({
 			easing: theme.transitions.easing.sharp,
 			duration: theme.transitions.duration.enteringScreen,
 		}),
+		backgroundColor: "#353535",
+		borderColor: "transparent"
 	},
 	drawerClose: {
 		transition: theme.transitions.create('width', {
@@ -66,6 +70,8 @@ const useStyles = makeStyles((theme) => ({
 		[theme.breakpoints.up('sm')]: {
 			width: theme.spacing(9) + 1,
 		},
+		backgroundColor: "#353535",
+		borderColor: "transparent"
 	},
 	toolbar: {
 		display: 'flex',
@@ -81,7 +87,7 @@ const useStyles = makeStyles((theme) => ({
 	},
 }));
 
-export default function NavBar() {
+export default function MainWindow() {
 	const classes = useStyles();
 	const [open, setOpen] = React.useState(false);
 
@@ -95,7 +101,7 @@ export default function NavBar() {
 
 	return (
 		<div className={classes.root}>
-			<CssBaseline />
+			<CssBaseline/>
 			<AppBar
 				position="fixed"
 				className={clsx(classes.appBar, {
@@ -112,9 +118,9 @@ export default function NavBar() {
 							[classes.hide]: open,
 						})}
 					>
-						<MenuIcon />
+						<MenuIcon/>
 					</IconButton>
-					<Typography variant="h5" noWrap>
+					<Typography variant="h6" noWrap>
 						React Player
 					</Typography>
 				</Toolbar>
@@ -134,18 +140,18 @@ export default function NavBar() {
 			>
 				<div className={classes.toolbar}>
 					<IconButton onClick={handleDrawerClose}>
-						<ChevronLeftIcon />
+						<ChevronLeftIcon style={{color: "white"}}/>
 					</IconButton>
 				</div>
-				<Divider />
+				<Divider/>
 				<List>
 					<ListItem button key={"Upload"}>
-						<ListItemIcon><PublishIcon/></ListItemIcon>
-						<ListItemText primary={"Upload"} />
+						<ListItemIcon><PublishIcon className={"drawer"}/></ListItemIcon>
+						<ListItemText className={"drawer"} primary={"Upload"}/>
 					</ListItem>
 					<ListItem button key={"Tracks"}>
-						<ListItemIcon><AudiotrackIcon/></ListItemIcon>
-						<ListItemText primary={"Tracks"} />
+						<ListItemIcon><AudiotrackIcon className={"drawer"}/></ListItemIcon>
+						<ListItemText className={"drawer"} primary={"Tracks"}/>
 					</ListItem>
 				</List>
 			</Drawer>
