@@ -21,7 +21,7 @@ export default function VolumeControl({value, setValue}) {
 
 	return (
 		<div style={{color: theme.palette.primary.contrastText}}>
-			<Grid container spacing={0}>
+			<Grid container spacing={0} className="volume">
 				<Grid item xs={3}>
 					{vol}
 				</Grid>

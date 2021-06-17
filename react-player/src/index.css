@@ -11,6 +11,11 @@ code {
 	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
+.volume {
+	margin-top: 10%;
+	padding: 5%;
+}
+
 .controlBar {
 	bottom: 0px;
 	padding: 0.75%;
