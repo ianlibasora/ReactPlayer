@@ -6,6 +6,7 @@ import VolumeUpIcon from '@material-ui/icons/VolumeUp';
 import { useTheme } from '@material-ui/core';
 import { Grid } from '@material-ui/core';
 import { Slider } from '@material-ui/core';
+import { Tooltip } from '@material-ui/core';
 
 export default function VolumeControl({value, setValue}) {
 	const theme = useTheme()
@@ -26,7 +27,7 @@ export default function VolumeControl({value, setValue}) {
 					{vol}
 				</Grid>
 				<Grid item xs={9}>
-					<Slider color="secondary" value={value} onChange={(event, newValue) => setValue(newValue)} aria-labelledby="continuous-slider"/>
+					<Slider color="secondary" value={value} valueLabelDisplay="auto" onChange={(event, newValue) => setValue(newValue)} aria-label="volume control"/>
 				</Grid>
 			</Grid>
 		</div>
