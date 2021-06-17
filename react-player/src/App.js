@@ -3,7 +3,7 @@ import './App.css';
 import React from 'react';
 import Typography from '@material-ui/core/Typography';
 
-import AudioBar from './components/AudioBar';
+import TrackBar from './components/TrackBar';
 
 function App() {
 	return (
@@ -13,7 +13,7 @@ function App() {
 			   	USER MENU SECTION
 				</Typography>
 			</div>
-			<AudioBar/>
+			<TrackBar/>
 		</div>
 	);
 }
