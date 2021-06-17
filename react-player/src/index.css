@@ -11,8 +11,7 @@ code {
 	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
-.drawer {
-	background-color: #353535;
-	border-color: #353535;
-	color: white;
+.controlBar {
+	bottom: 0px;
+	padding: 1%;
 }
