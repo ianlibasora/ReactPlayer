@@ -2,17 +2,19 @@
 import './App.css';
 import React from 'react';
 import Typography from '@material-ui/core/Typography';
+import { Grid } from '@material-ui/core';
 
 import TrackBar from './components/TrackBar';
 
 function App() {
 	return (
 		<div className="App">
-			<div>
-				<Typography variant="h5" gutterBottom>
-			   	USER MENU SECTION
-				</Typography>
-			</div>
+			<Grid container justify="center" alignItems="stretch">
+				<Grid item>
+					<Typography>HELLO WORLD</Typography>
+				</Grid>
+			</Grid>
+
 			<TrackBar/>
 		</div>
 	);
