@@ -10,7 +10,7 @@ import PauseCircleFilledIcon from '@material-ui/icons/PauseCircleFilled';
 import { IconButton } from '@material-ui/core';
 import { Typography } from '@material-ui/core';
 
-export default function TrackControl() {
+export default function TrackControl({trackTime, setTrackTime}) {
 	const theme = useTheme()
 
 	return (
@@ -39,13 +39,13 @@ export default function TrackControl() {
 					<p>&nbsp;</p>
 				</Grid>
 				<Grid item xs={1}>
-					<Typography>CURR TRACK TIME</Typography>
+					<Typography variant="caption">00:00</Typography>
 				</Grid>
 				<Grid item md={10}>
-					<Typography>TESTING SLIDER</Typography>
+					<Slider color="secondary" value={trackTime} onChange={(event, newTrackTime) => setTrackTime(newTrackTime)} aria-label="Track control"/>
 				</Grid>
 				<Grid item xs={1}>
-					<Typography>TRACK LGT</Typography>
+				<Typography variant="caption">99:99</Typography>
 				</Grid>
 			</Grid>
 		</div>
