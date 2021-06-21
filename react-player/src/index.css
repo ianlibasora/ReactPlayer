@@ -16,7 +16,7 @@ code {
    padding: 5pt;
 }
 
-.menu {
+.menuContainer {
    background-color: #262626;
    min-height: 90vh;
 }
@@ -31,4 +31,31 @@ code {
 .volume {
    margin-top: 10%;
    padding: 5%;
+}
+
+.formContainer {
+   border-radius: 30px;
+   padding: 20pt;
+   margin-top: 15%;
+}
+
+.formIcon {
+   font-size: 1250%;
+   padding: 0px;
+}
+
+.formControl input {
+   border-radius: 5px;
+   margin-bottom: 10pt;
+   padding: 12px;
+   cursor: pointer;
+   color: white;
+   background-color: #56b3ff;
+}
+
+.formControl input:hover {
+   -webkit-transition: background-color 100ms linear;
+   -ms-transition: background-color 100ms linear;
+   transition: background-color 100ms linear;
+   background-color: #0084cb;
 }
