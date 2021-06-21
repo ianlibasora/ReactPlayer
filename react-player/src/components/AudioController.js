@@ -2,15 +2,12 @@
 import React from 'react';
 import { useTheme } from '@material-ui/core';
 import { Grid } from '@material-ui/core';
-import { useState } from 'react';
 
 import VolumeControl from './VolumeControl';
 import TrackControl from './TrackControl';
 
-export default function AudioController() {
+export default function AudioController({value, setValue, trackTime, setTrackTime}) {
    const theme = useTheme()
-   const [value, setValue] = useState(200)
-   const [trackTime, setTrackTime] = useState(0)
 
    return (
       <div style={{color: theme.palette.primary.contrastText}}>
