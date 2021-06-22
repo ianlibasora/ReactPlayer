@@ -14,7 +14,7 @@ function App() {
    const theme = useTheme()
    const [value, setValue] = useState(200)
    const [trackTime, setTrackTime] = useState(0)
-   let [trackList, trackListHook] = useState([])
+   let [trackList, setTrackList] = useState([])
    let [trackQueue, trackQueueHook] = useState([])
 
    return (
@@ -24,7 +24,7 @@ function App() {
          <div className="menuContainer" style={{color: `${theme.palette.primary.contrastText}`}}>
             <Grid container justify="center" alignItems="stretch">
                <Grid item>
-                  <Menu trackList={trackList} trackListHook={trackListHook}/>
+                  <Menu trackList={trackList} setTrackList={setTrackList}/>
                </Grid>
             </Grid>
          </div>
