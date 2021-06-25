@@ -23,7 +23,7 @@ function App() {
 
          <div className="menuContainer" style={{color: `${theme.palette.primary.contrastText}`}}>
             <Grid container justify="center" alignItems="stretch">
-               <Grid item>
+               <Grid item md={7}>
                   <Menu trackList={trackList} setTrackList={setTrackList}/>
                </Grid>
             </Grid>
