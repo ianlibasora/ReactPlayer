@@ -16,9 +16,11 @@ export default function TrackForm({setTrackList}) {
                event.preventDefault()
                let filesIn = event["target"][0]["files"]
                let trackList = []
+               let i = 0
+
                for (let key in filesIn) {
                   if (filesIn[key] instanceof File) {
-                     trackList.push(filesIn[key])
+                     trackList.push({"id": i++, "file": filesIn[key]})
                   }
                }
                setTrackList(trackList)
