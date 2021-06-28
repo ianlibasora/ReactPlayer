@@ -35,7 +35,7 @@ export default function Menu({trackList, setTrackList, setCurrentTrack}) {
                               <IconButton
                                  aria-label="Play track"
                                  color="inherit"
-                                 onClick={() => setCurrentTrack(track)}
+                                 onClick={() => setCurrentTrack(track.id)}
                               >
                                  <PlayCircleFilledWhiteIcon fontSize="small"/>
                               </IconButton>

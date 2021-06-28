@@ -4,6 +4,7 @@ import React from 'react';
 import { Grid } from '@material-ui/core';
 import { useTheme } from '@material-ui/core';
 import { useState } from 'react';
+import { useEffect } from 'react';
 
 import TrackBar from './components/TrackBar';
 import Header from './components/Header';
@@ -13,19 +14,14 @@ function App() {
    const theme = useTheme()
    const [value, setValue] = useState(200)
    const [trackTime, setTrackTime] = useState(0)
-   let [trackList, setTrackList] = useState([])
-   let [currentTrack, setCurrentTrack] = useState({"id": 0, "file": ""})
+   const [trackList, setTrackList] = useState([])
+   let [currentTrack, setCurrentTrack] = useState(0)
+   let [nextTrack, setNextTrack] = useState(currentTrack + 1)
+   let [prevTrack, setPrevTrack] = useState(currentTrack - 1)
 
-   console.log(currentTrack, "current")
-
-   // let src;
-   // if (currentTrack.file === "") {
-   //    src = <source src="" type="audio/mpeg"></source>
-   //    console.log("no src")
-   // } else {
-   //    src = <source src={URL.createObjectURL(currentTrack.file)} type="audio/mpeg"></source>
-   //    console.log(`src is ${currentTrack.file.name}`)
-   // }
+   useEffect(() => {
+      setNextTrack((currentTrack + 1) % (trackList.length - 1))
+   }, [currentTrack, trackList])
 
    return (
       <div className="App">
@@ -39,9 +35,20 @@ function App() {
             </Grid>
          </div>
 
-         <TrackBar value={value} setValue={setValue} trackTime={trackTime} setTrackTime={setTrackTime}/>
+         <TrackBar
+            value={value}
+            setValue={setValue}
+            trackTime={trackTime}
+            setTrackTime={setTrackTime}
+            currentTrack={currentTrack}
+            setCurrentTrack={setCurrentTrack}
+            nextTrack={nextTrack}
+            setNextTrack={setNextTrack}
+            prevTrack={setPrevTrack}
+            setPrevTrack={setPrevTrack}
+         />
          {/* <audio controls>
-            {currentTrack.file === "" ? <source src="" type="audio/mpeg"></source> : <source src={URL.createObjectURL(currentTrack.file)} type="audio/mpeg"></source>}
+            <source src={currentTrack === -1 ? "" : URL.createObjectURL(trackList[currentTrack].file)} type="audio/mpeg"></source>
          </audio> */}
       </div>
    );

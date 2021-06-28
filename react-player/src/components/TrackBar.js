@@ -6,7 +6,7 @@ import { useTheme } from '@material-ui/core';
 
 import AudioController from './AudioController';
 
-export default function TrackBar({value, setValue, trackTime, setTrackTime}) {
+export default function TrackBar({value, setValue, trackTime, setTrackTime, currentTrack, setCurrentTrack, nextTrack, setNextTrack, prevTrack, setPrevTrack}) {
    const theme = useTheme()
 
    return (
@@ -16,7 +16,18 @@ export default function TrackBar({value, setValue, trackTime, setTrackTime}) {
                <Typography style={{color: theme.palette.primary.contrastText}}>AUDIO TRACK INFO</Typography>
             </Grid>
             <Grid item xs={9}>
-               <AudioController value={value} setValue={setValue} trackTime={trackTime} setTrackTime={setTrackTime}/>
+               <AudioController
+                  value={value}
+                  setValue={setValue}
+                  trackTime={trackTime}
+                  setTrackTime={setTrackTime}
+                  currentTrack={currentTrack}
+                  setCurrentTrack={setCurrentTrack}
+                  nextTrack={nextTrack}
+                  setNextTrack={setNextTrack}
+                  prevTrack={setPrevTrack}
+                  setPrevTrack={setPrevTrack}
+               />
             </Grid>
          </Grid>
       </div>

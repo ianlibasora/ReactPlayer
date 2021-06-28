@@ -6,7 +6,7 @@ import { Grid } from '@material-ui/core';
 import VolumeControl from './VolumeControl';
 import TrackControl from './TrackControl';
 
-export default function AudioController({value, setValue, trackTime, setTrackTime}) {
+export default function AudioController({value, setValue, trackTime, setTrackTime, currentTrack, setCurrentTrack, nextTrack, setNextTrack, prevTrack, setPrevTrack}) {
    const theme = useTheme()
 
    return (
