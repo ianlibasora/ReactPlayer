@@ -20,7 +20,11 @@ export default function TrackForm({setTrackList}) {
 
                for (let key in filesIn) {
                   if (filesIn[key] instanceof File) {
-                     trackList.push({"id": i++, "file": filesIn[key]})
+                     trackList.push({
+                        "id": i++, 
+                        "file": filesIn[key],
+                        "url": URL.createObjectURL(filesIn[key])
+                     })
                   }
                }
                setTrackList(trackList)

@@ -18,7 +18,6 @@ export default function AudioController({
    let [playing, setPlaying] = useState(false)
 
    useEffect(() => {
-      console.log(playerTag)
       playing ? playerTag.current.play() : playerTag.current.pause()
    })
 
@@ -38,7 +37,7 @@ export default function AudioController({
             </Grid>
          </Grid>
 
-         <audio src={trackList.length === 0 ? "" : URL.createObjectURL(trackList[currentTrack].file)} ref={playerTag} controls></audio>
+         <audio src={trackList.length === 0 ? "" : trackList[currentTrack].url} ref={playerTag} controls></audio>
       </div>
    )
 }

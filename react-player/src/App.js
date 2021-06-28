@@ -48,9 +48,6 @@ function App() {
             prevTrack={setPrevTrack}
             setPrevTrack={setPrevTrack}
          />
-         {/* <audio controls>
-            <source src={currentTrack === -1 ? "" : URL.createObjectURL(trackList[currentTrack].file)} type="audio/mpeg"></source>
-         </audio> */}
       </div>
    );
 }
