@@ -4,7 +4,6 @@ import React from 'react';
 import { Grid } from '@material-ui/core';
 import { useTheme } from '@material-ui/core';
 import { useState } from 'react';
-import { useEffect } from 'react';
 
 import TrackBar from './components/TrackBar';
 import Header from './components/Header';

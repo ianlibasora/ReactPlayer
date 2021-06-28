@@ -10,7 +10,14 @@ import PauseCircleFilledIcon from '@material-ui/icons/PauseCircleFilled';
 import { IconButton } from '@material-ui/core';
 import { Typography } from '@material-ui/core';
 
-export default function TrackControl({trackTime, setTrackTime, playing, setPlaying}) {
+function mod(a, b) {
+   return ((a % b) + b) % b
+}
+
+export default function TrackControl({
+      trackTime, setTrackTime, playing, setPlaying, 
+      trackList, currentTrack, setCurrentTrack
+   }) {
    const theme = useTheme()
 
    return (
@@ -23,6 +30,7 @@ export default function TrackControl({trackTime, setTrackTime, playing, setPlayi
                <IconButton
                   aria-label="Skip previous track"
                   color="inherit"
+                  onClick={() => setCurrentTrack(mod(currentTrack - 1, trackList.length))}
                >
                   <SkipPreviousIcon fontSize="large"/>
                </IconButton>
@@ -40,6 +48,7 @@ export default function TrackControl({trackTime, setTrackTime, playing, setPlayi
                <IconButton
                   aria-label="Skip next track"
                   color="inherit"
+                  onClick={() => setCurrentTrack((currentTrack + 1) % trackList.length)}
                >
                   <SkipNextIcon fontSize="large"/>
                </IconButton>

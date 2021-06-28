@@ -16,10 +16,9 @@ export default function AudioController({
    const playerTag = useRef(null)
    let [playing, setPlaying] = useState(false)
    let [nextTrack, setNextTrack] = useState(currentTrack + 1)
-   let [prevTrack, setPrevTrack] = useState(currentTrack - 1)
 
    useEffect(() => {
-      setNextTrack((currentTrack + 1) % (trackList.length - 1))
+      setNextTrack((currentTrack + 1) % trackList.length)
    }, [currentTrack, trackList])
 
    useEffect(() => {
@@ -35,6 +34,9 @@ export default function AudioController({
                   setTrackTime={setTrackTime}
                   playing={playing}
                   setPlaying={setPlaying}
+                  trackList={trackList}
+                  currentTrack={currentTrack}
+                  setCurrentTrack={setCurrentTrack}
                />
             </Grid>
             <Grid item xs={3}>
