@@ -18,11 +18,13 @@ code {
 
 .menuContainer {
    background-color: #262626;
-   min-height: 90vh;
+   min-height: 88vh;
 }
 
 .menu {
-   color: white
+   color: white;
+   margin-top: 2%;
+   margin-bottom: 15%;
 }
 
 .controlBar {

@@ -24,7 +24,7 @@ export default function Menu({trackList, setTrackList, setCurrentTrack}) {
                   <TableHead>
                      <TableRow>
                         <TableCell>&nbsp;</TableCell>
-                        <TableCell align="right" style={{color: "inherit"}}>Title</TableCell>
+                        <TableCell align="right" style={{color: "inherit"}}>Track</TableCell>
                      </TableRow>
                   </TableHead>
 

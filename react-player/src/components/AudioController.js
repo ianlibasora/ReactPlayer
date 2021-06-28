@@ -44,7 +44,7 @@ export default function AudioController({
             </Grid>
          </Grid>
 
-         <audio src={trackList.length === 0 ? "" : trackList[currentTrack].url} ref={playerTag} controls></audio>
+         <audio src={trackList.length === 0 ? "" : trackList[currentTrack].url} ref={playerTag}></audio>
       </div>
    )
 }
