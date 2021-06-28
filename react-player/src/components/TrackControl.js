@@ -20,7 +20,10 @@ export default function TrackControl({trackTime, setTrackTime, playing, setPlayi
                <p>&nbsp;</p>
             </Grid>
             <Grid item xs={1}>
-               <IconButton aria-label="Previous track" color="inherit">
+               <IconButton
+                  aria-label="Skip previous track"
+                  color="inherit"
+               >
                   <SkipPreviousIcon fontSize="large"/>
                </IconButton>
             </Grid>
@@ -34,7 +37,10 @@ export default function TrackControl({trackTime, setTrackTime, playing, setPlayi
                </IconButton>
             </Grid>
             <Grid item xs={1}>
-               <IconButton aria-label="Next track" color="inherit">
+               <IconButton
+                  aria-label="Skip next track"
+                  color="inherit"
+               >
                   <SkipNextIcon fontSize="large"/>
                </IconButton>
             </Grid>

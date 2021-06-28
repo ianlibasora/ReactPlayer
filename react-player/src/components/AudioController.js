@@ -10,12 +10,17 @@ import TrackControl from './TrackControl';
 
 export default function AudioController({
       value, setValue, trackTime, setTrackTime, 
-      trackList, currentTrack, setCurrentTrack, nextTrack, 
-      setNextTrack, prevTrack, setPrevTrack
+      trackList, currentTrack, setCurrentTrack
    }) {
    const theme = useTheme()
    const playerTag = useRef(null)
    let [playing, setPlaying] = useState(false)
+   let [nextTrack, setNextTrack] = useState(currentTrack + 1)
+   let [prevTrack, setPrevTrack] = useState(currentTrack - 1)
+
+   useEffect(() => {
+      setNextTrack((currentTrack + 1) % (trackList.length - 1))
+   }, [currentTrack, trackList])
 
    useEffect(() => {
       playing ? playerTag.current.play() : playerTag.current.pause()

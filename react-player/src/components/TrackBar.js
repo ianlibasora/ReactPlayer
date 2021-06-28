@@ -8,8 +8,7 @@ import AudioController from './AudioController';
 
 export default function TrackBar({
       value, setValue, trackTime, setTrackTime, 
-      trackList, currentTrack, setCurrentTrack, nextTrack, 
-      setNextTrack, prevTrack, setPrevTrack
+      trackList, currentTrack, setCurrentTrack
    }) {
    const theme = useTheme()
 
@@ -34,10 +33,6 @@ export default function TrackBar({
                   trackList={trackList}
                   currentTrack={currentTrack}
                   setCurrentTrack={setCurrentTrack}
-                  nextTrack={nextTrack}
-                  setNextTrack={setNextTrack}
-                  prevTrack={setPrevTrack}
-                  setPrevTrack={setPrevTrack}
                />
             </Grid>
          </Grid>

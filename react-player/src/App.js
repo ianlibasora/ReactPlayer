@@ -16,12 +16,6 @@ function App() {
    const [trackTime, setTrackTime] = useState(0)
    const [trackList, setTrackList] = useState([])
    let [currentTrack, setCurrentTrack] = useState(0)
-   let [nextTrack, setNextTrack] = useState(currentTrack + 1)
-   let [prevTrack, setPrevTrack] = useState(currentTrack - 1)
-
-   useEffect(() => {
-      setNextTrack((currentTrack + 1) % (trackList.length - 1))
-   }, [currentTrack, trackList])
 
    return (
       <div className="App">
@@ -43,10 +37,6 @@ function App() {
             trackList={trackList}
             currentTrack={currentTrack}
             setCurrentTrack={setCurrentTrack}
-            nextTrack={nextTrack}
-            setNextTrack={setNextTrack}
-            prevTrack={setPrevTrack}
-            setPrevTrack={setPrevTrack}
          />
       </div>
    );
