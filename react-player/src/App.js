@@ -40,6 +40,7 @@ function App() {
             setValue={setValue}
             trackTime={trackTime}
             setTrackTime={setTrackTime}
+            trackList={trackList}
             currentTrack={currentTrack}
             setCurrentTrack={setCurrentTrack}
             nextTrack={nextTrack}
