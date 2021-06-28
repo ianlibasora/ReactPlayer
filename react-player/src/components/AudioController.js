@@ -18,6 +18,7 @@ export default function AudioController({
    let [playing, setPlaying] = useState(false)
 
    useEffect(() => {
+      console.log(playerTag)
       playing ? playerTag.current.play() : playerTag.current.pause()
    })
 
@@ -25,14 +26,19 @@ export default function AudioController({
       <div style={{color: theme.palette.primary.contrastText}}>
          <Grid container spacing={2}>
             <Grid item sm={9}>
-               <TrackControl trackTime={trackTime} setTrackTime={setTrackTime}/>
+               <TrackControl
+                  trackTime={trackTime}
+                  setTrackTime={setTrackTime}
+                  playing={playing}
+                  setPlaying={setPlaying}
+               />
             </Grid>
             <Grid item xs={3}>
                <VolumeControl value={value} setValue={setValue}/>
             </Grid>
          </Grid>
 
-         <audio ref={playerTag} src={trackList.length === 0 ? "" : URL.createObjectURL(trackList[currentTrack].file)} controls></audio>
+         <audio src={trackList.length === 0 ? "" : URL.createObjectURL(trackList[currentTrack].file)} ref={playerTag} controls></audio>
       </div>
    )
 }
