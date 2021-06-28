@@ -17,7 +17,13 @@ export default function TrackBar({
       <div className="controlBar" style={{backgroundColor: theme.palette.primary.main}}>
          <Grid container spacing={2}>
             <Grid item sm={3}>
-               <Typography style={{color: theme.palette.primary.contrastText}}>AUDIO TRACK INFO</Typography>
+               <Typography
+                  style={{color: theme.palette.primary.contrastText}}
+                  variant="body1"
+                  className="trackInfo"
+               >
+                  {trackList.length === 0 ? "" : trackList[currentTrack].file.name.replace(".mp3", "")}
+               </Typography>
             </Grid>
             <Grid item xs={9}>
                <AudioController

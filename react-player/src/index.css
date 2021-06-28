@@ -37,6 +37,11 @@ code {
    padding: 5%;
 }
 
+.trackInfo {
+   margin-top: 5%;
+   padding: 2%;
+}
+
 .formContainer {
    border-radius: 30px;
    padding: 20pt;
