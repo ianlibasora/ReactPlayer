@@ -37,6 +37,7 @@ export default function AudioController({
                   trackList={trackList}
                   currentTrack={currentTrack}
                   setCurrentTrack={setCurrentTrack}
+                  playerTag={playerTag}
                />
             </Grid>
             <Grid item xs={3}>
@@ -44,7 +45,7 @@ export default function AudioController({
             </Grid>
          </Grid>
 
-         <audio src={trackList.length === 0 ? "" : trackList[currentTrack].url} ref={playerTag}></audio>
+         <audio src={trackList.length === 0 ? "" : trackList[currentTrack].url} ref={playerTag} controls></audio>
       </div>
    )
 }
