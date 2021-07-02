@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React from 'react';
 import { useTheme } from '@material-ui/core';
 import { Grid } from '@material-ui/core';
 import { Slider } from '@material-ui/core';
@@ -10,6 +10,7 @@ import PauseCircleFilledIcon from '@material-ui/icons/PauseCircleFilled';
 import { IconButton } from '@material-ui/core';
 // import { Typography } from '@material-ui/core';
 // import { useEffect } from 'react';
+// import { useState } from 'react';
 
 function mod(a, b) {
    return ((a % b) + b) % b

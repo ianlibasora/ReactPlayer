@@ -11,7 +11,6 @@ import Menu from './components/Menu';
 
 function App() {
    const theme = useTheme()
-   const [value, setValue] = useState(200)
    const [trackTime, setTrackTime] = useState(0)
    const [trackList, setTrackList] = useState([])
    let [currentTrack, setCurrentTrack] = useState(0)
@@ -29,8 +28,6 @@ function App() {
          </div>
 
          <TrackBar
-            value={value}
-            setValue={setValue}
             trackTime={trackTime}
             setTrackTime={setTrackTime}
             trackList={trackList}

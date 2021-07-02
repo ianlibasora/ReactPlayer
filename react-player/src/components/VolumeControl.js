@@ -26,7 +26,10 @@ export default function VolumeControl({value, setValue}) {
                {vol}
             </Grid>
             <Grid item xs={9}>
-               <Slider color="secondary" value={value} valueLabelDisplay="auto" onChange={(event, newValue) => setValue(newValue)} aria-label="volume control"/>
+               <Slider 
+                  color="secondary"
+                  value={value}
+                  valueLabelDisplay="auto" onChange={(event, newValue) => setValue(newValue)} aria-label="volume control"/>
             </Grid>
          </Grid>
       </div>

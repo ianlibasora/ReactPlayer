@@ -9,13 +9,14 @@ import VolumeControl from './VolumeControl';
 import TrackControl from './TrackControl';
 
 export default function AudioController({
-      value, setValue, trackTime, setTrackTime, 
-      trackList, currentTrack, setCurrentTrack
+      trackTime, setTrackTime, trackList, 
+      currentTrack, setCurrentTrack
    }) {
    const theme = useTheme()
    const playerTag = useRef(null)
    let [playing, setPlaying] = useState(false)
    let [nextTrack, setNextTrack] = useState(currentTrack + 1)
+   const [value, setValue] = useState(100)
 
    useEffect(() => {
       setNextTrack((currentTrack + 1) % trackList.length)
@@ -24,6 +25,10 @@ export default function AudioController({
    useEffect(() => {
       playing ? playerTag.current.play() : playerTag.current.pause()
    })
+
+   useEffect(() => {
+      playerTag.current.volume = value / 100
+   }, [value])
 
    return (
       <div style={{color: theme.palette.primary.contrastText}}>
