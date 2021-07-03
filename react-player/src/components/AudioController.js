@@ -52,9 +52,9 @@ export default function AudioController({
 
          <audio
             src={trackList.length === 0 ? "" : trackList[currentTrack].url}
-            ref={playerTag} 
-            controls
-            onEnded={() => setCurrentTrack(nextTrack)}>
+            ref={playerTag}
+            onEnded={() => setCurrentTrack(nextTrack)}
+         >
          </audio>
       </div>
    )
