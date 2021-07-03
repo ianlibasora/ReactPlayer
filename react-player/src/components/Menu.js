@@ -1,6 +1,5 @@
 
 import React from 'react';
-import { useTheme } from '@material-ui/core';
 import { TableContainer, Table, TableHead, TableRow, TableCell, TableBody } from '@material-ui/core';
 import { IconButton } from '@material-ui/core';
 import PlayCircleFilledWhiteIcon from '@material-ui/icons/PlayCircleFilledWhite';
@@ -8,7 +7,6 @@ import PlayCircleFilledWhiteIcon from '@material-ui/icons/PlayCircleFilledWhite'
 import TrackForm from './TrackForm';
 
 export default function Menu({trackList, setTrackList, setCurrentTrack}) {
-   const theme = useTheme()
 
    if (trackList.length === 0) {
       return (
